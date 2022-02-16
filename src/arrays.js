@@ -35,6 +35,10 @@ const addToArray2 = (element, array) => {
 
 const removeNthElement = (index, array) => {
   // your code here
+  for (let i=0; i<(array.length-1-index); i+=1){
+    array[index+i] = array[index+i+1];
+  }
+  array.length = array.length-1;
 };
 
 const numbersToStrings = numbers => {
