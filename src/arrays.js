@@ -1,11 +1,5 @@
 const getNthElement = (index, array) => {
   // your code here
-  // if (index < array.length){
-  //   return array[index];
-  // }  else
-  // {
-  //   return array[index - array.length];
-  // }
   return array[index%array.length];
 };
 
@@ -44,38 +38,93 @@ const removeNthElement = (index, array) => {
 
 const numbersToStrings = numbers => {
   // your code here
+  for (let i=0; i<numbers.length; i+=1){
+    numbers[i]=numbers[i].toString();
+  }
+  return numbers;
 };
 
 const uppercaseWordsInArray = strings => {
   // your code here
+  for (let i=0; i<strings.length; i+=1){
+    strings[i]=strings[i].toUpperCase();
+  }
+  return strings;
+
 };
 
 const reverseWordsInArray = strings => {
   // your code here
+  for (let i=0; i<strings.length; i+=1){
+    let tempArray=strings[i].split('');
+    tempArray.reverse();
+    strings[i]=tempArray.join('');
+  }
+  return strings;
 };
 
 const onlyEven = numbers => {
   // your code here
+  let tempArray = [];
+  for (let i=0; i<numbers.length; i+=1){
+    if (numbers[i]%2===0) {
+      tempArray.push(numbers[i]);
+    }
+  }
+  return tempArray;
+
 };
 
 const removeNthElement2 = (index, array) => {
   // your code here
+  let tempArray = [];
+  for (let i=0; i<array.length; i+=1){
+    if (i!=index) {
+      tempArray.push(array[i]);
+    }
+  }
+  return tempArray;
+
 };
 
 const elementsStartingWithAVowel = strings => {
   // your code here
+  let tempArray = [];
+  for (let i=0; i<strings.length; i+=1){
+    const char=strings[i].charAt(0);
+    if (char === 'a' || char ==='A' || char ==='e' || char ==='E' || char ==='i' || char ==='I' || char ==='o' || char ==='O' || char ==='u' || char ==='U' ) {
+      tempArray.push(strings[i]);
+    }
+  }
+  return tempArray;
 };
 
 const removeSpaces = string => {
   // your code here
+  const strings = string.split(' ');
+  let tempArray = [];
+  for (let i=0; i<strings.length; i+=1){
+      tempArray.push(strings[i]);
+  }
+  const text=tempArray.join('');
+  return text;
 };
 
 const sumNumbers = numbers => {
   // your code here
+  let total=0;
+  for (let i=0; i<numbers.length; i+=1){
+    total += numbers[i];
+  }
+  return total;
 };
 
 const sortByLastLetter = strings => {
   // your code here
+  let tempArray = reverseWordsInArray(strings);
+  tempArray.sort();
+  strings = reverseWordsInArray(strings);
+  return strings;
 };
 
 module.exports = {
