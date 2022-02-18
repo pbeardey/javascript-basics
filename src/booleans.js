@@ -98,14 +98,6 @@ function containsVowels(string) {
     return true;
   }
   return false;
-
-  // for (let i=0; i<string.length; i+=1) {
-  //   let char = string.charAt(i);
-  //     if (char === 'a' || char ==='A' || char ==='e' || char ==='E' || char ==='i' || char ==='I' || char ==='o' || char ==='O' || char ==='u' || char ==='U' ) {
-  //     return true;
-  //   } 
-  // }
-  // return false;
 };
 
 function isLowerCase(string) {
