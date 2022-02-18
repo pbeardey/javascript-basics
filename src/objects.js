@@ -54,14 +54,34 @@ const findByName = (name, people) => {
 
 const findHondas = cars => {
   // your code here
+  const hondas = [];
+  for (i=0; i<cars.length; i+=1){
+    if (cars[i].manufacturer==='Honda') {
+      hondas.push(cars[i])
+    }
+  }
+  return hondas;
 };
 
 const averageAge = people => {
   // your code here
+  let totalAge = 0;
+  for (i=0; i<people.length; i+=1){
+    totalAge+=people[i].age;
+  }
+  return totalAge/people.length;
 };
 
 const createTalkingPerson = (name, age) => {
   // your code here
+  const talkingPerson = {
+    name: name,
+    age: age,
+    introduce: function(friendName){
+      return `Hi ${friendName}, my name is ${this.name} and I am ${this.age}!`
+    }
+  }
+  return talkingPerson;
 };
 
 module.exports = {
