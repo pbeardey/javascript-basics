@@ -5,27 +5,22 @@ const getNthElement = (index, array) => {
 
 const arrayToCSVString = array => {
   // your code here
-  const string = array.join();
-  return string;
+  return array.join();
 };
 
 const csvStringToArray = string => {
   // your code here
-  const myArray = string.split(",");
-  return myArray;
+  return string.split(",");
 };
 
 const addToArray = (element, array) => {
   // your code here
   const addToArray = array.push(element);
-  //return array;
 };
 
 const addToArray2 = (element, array) => {
   // your code here
-  let myArray = [];
-  myArray = array.concat(element);
-  return myArray;
+  return array.concat(element);
 };
 
 const removeNthElement = (index, array) => {
@@ -35,69 +30,53 @@ const removeNthElement = (index, array) => {
 
 const numbersToStrings = numbers => {
   // your code here
-  const tempArray = numbers.map( number => number.toString() );
-  return tempArray;
+  return numbers.map( number => number.toString() );
 };
 
 const uppercaseWordsInArray = strings => {
   // your code here
-  const tempArray = strings.map ( string => string.toUpperCase() );
-  return tempArray;
+  return strings.map ( string => string.toUpperCase() );
+  
 };
 
 const reverseWordsInArray = strings => {
   // your code here
-  const tempArray = strings.map ( (string) => {
-    string = ((string.split('')).reverse()).join('');
-    return string;
-  } );
-  return tempArray;
-};
+  return strings.map ( string => string.split('').reverse().join('') );
+}
 
 const onlyEven = numbers => {
   // your code here
-  const tempArray = numbers.filter( (number) => {if (number%2===0) {return this}} );
-  return tempArray;
+  return numbers.filter( (number) => {if (number%2===0) {return this}} );
 };
 
 const removeNthElement2 = (index, array) => {
   // your code here
-  const tempArray = array.filter( (element, ix)=> { 
+  return array.filter( (element, ix)=> { 
     if (ix!=index){
       return element;
     }
 } )
-  return tempArray;
 };
 
 const elementsStartingWithAVowel = strings => {
   // your code here
-
-  const tempArray = strings.filter( (element) => {
-    const char = element.charAt(0);
-    if (char === 'a' || char ==='A' || char ==='e' || char ==='E' || char ==='i' || char ==='I' || char ==='o' || char ==='O' || char ==='u' || char ==='U' ) {
-      return element;
-    }
-  } )
-  return tempArray;
+  return strings.filter( string => /^[aeiou]/i.test(string));
+  
 };
 
 const removeSpaces = string => {
   // your code here
-  string = (string.split(' ')).join('');
-  return string;
+  return (string.split(' ')).join('');
 };
 
 const sumNumbers = numbers => {
   // your code here
-  const total = numbers.reduce((prevTotal, currentNumber)=>{ return prevTotal + currentNumber},0 );
-  return total;
+  return numbers.reduce((prevTotal, currentNumber)=>{ return prevTotal + currentNumber},0 );
 };
 
 const sortByLastLetter = strings => {
   // your code here
-  strings = reverseWordsInArray((reverseWordsInArray(strings)).sort());
- return strings;
+  return reverseWordsInArray((reverseWordsInArray(strings)).sort());
 };
 
 module.exports = {
