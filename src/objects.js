@@ -36,35 +36,24 @@ const isOver65 = person => {
 
 const getAges = people => {
   // your code here
-  const tempArray = people.map((people)=>{return people.age});
-  return tempArray;
+  return people.map((people)=>{return people.age});
 };
 
 const findByName = (name, people) => {
   // your code here
-  const foundPerson = people.find( (person)=>{ if (person.name === name){
-    return person;
-  }});
-  return foundPerson;
+
+  return people.find( (person) => person.name === name );
+
 };
 
 const findHondas = cars => {
   // your code here
-  const hondas = cars.filter(car => car.manufacturer === 'Honda')
-  return hondas;
+  return cars.filter(car => car.manufacturer === 'Honda')
 };
 
 const averageAge = people => {
   // your code here
-  const TotalAge = people.reduce( (acc, currPerson) => {return acc + currPerson.age;}, 0 );
-  return TotalAge/people.length;
-
-
-  // let totalAge = 0;
-  // for (i=0; i<people.length; i+=1){
-  //   totalAge+=people[i].age;
-  // }
-  // return totalAge/people.length;
+  return people.reduce( (acc, currPerson) => {return acc + currPerson.age;}, 0 )/people.length;
 };
 
 const createTalkingPerson = (name, age) => {
