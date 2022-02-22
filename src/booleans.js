@@ -88,16 +88,8 @@ function startsWith(char, string) {
 };
 
 function containsVowels(string) {
-  //your code here
-  if (string.includes('a') || string.includes('A') || 
-      string.includes('e') || string.includes('E') ||
-       string.includes('i') || string.includes('I') ||
-        string.includes('o') || string.includes('O') ||
-         string.includes('u') || string.includes('U') )
-  {
-    return true;
-  }
-  return false;
+  //uses RegExp.test to test string for a group of vowels with case insensitive flag.
+  return /[aeiou]/i.test(string);
 };
 
 function isLowerCase(string) {
